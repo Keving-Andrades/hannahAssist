@@ -1,0 +1,66 @@
+    <header class="header">
+        <div class="header__wave">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+                <path class="wave" d="M-80.98,110.05 C127.82,206.75 264.95,-73.50 596.22,151.48 L494.64,-63.63 L-89.45,-24.16 Z"></path>
+            </svg>
+        </div>
+    </header>
+    
+    <main>
+        <div class="register" id="register">
+            <div class="loginchild">
+                <h3>Completa el registro para crear tu cuenta</h3>
+                <form id="signInUpForm" class="loginchild__form" action="/signup" method="POST">
+
+                    <div id="formNavbar" class="form__navbar">
+                        <span class="navbar active"></span>
+                        <span class="navbar"></span>
+                        <span class="navbar"></span>
+                    </div>
+
+                    <div id="formViews" class="formViews">
+
+                        <div id="form1" class="form1 front">
+                            <div class="labelForm">
+                                <span>¿Cuál es tu correo electrónico?</span>
+                            </div>
+                            <div class="inputWrapper">
+                                <input id="email" required type="email" name="email" placeholder="Correo electronico" autocomplete="off" maxlength="255" autofocus>
+                            </div>
+                        </div>
+    
+                        <div id="form2" class="form2 hidden">
+                            <div class="labelForm">
+                                <span>Ingresa tus datos personales</span>
+                            </div>
+                            <div class="inputWrapper">
+                                <input id="fName" required type="text" name="firstname" placeholder="Nombre" autocomplete="off" minlength="3">
+                                <input id="lName" required type="text" name="lastname" placeholder="Apellido" autocomplete="off" minlength="3">
+                                <div class="CI__input">
+                                    <input id="ci" required name="ci" placeholder="Cédula" autocomplete="off" minlength="8" maxlength="8">
+                                    <span>V-</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div id="form3" class="form3 hidden">
+                            <div class="labelForm">
+                                <span>Escoje un usuario y contraseña</span>
+                            </div>
+                            <div class="inputWrapper">
+                                <input id="username" required type="text" name="username" placeholder="Nombre de usuario" autocomplete="off" minlength="3" maxlength="15">
+                                <input required type="password" name="pass" placeholder="Contraseña" minlength="4" autocomplete="off">
+                                <input required type="password" name="cpass" placeholder="Confirmar contraseña" minlength="4" autocomplete="off">
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="button" id="signInUpBtn">Siguiente</div>
+                    <div class="authBtns center">
+                        <a href="/signin"><span>¿Ya tienes una cuenta?</span></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>

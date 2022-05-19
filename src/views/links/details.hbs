@@ -1,0 +1,183 @@
+
+{{> header}}
+
+{{> menu}}
+
+    <main id="main">
+
+        <div id="main_cover"></div>
+
+        <div class="schedule">
+
+            <div idTask="{{ taskDetails.idTask }}" id="moreDetailsTask" class="moreDetailsTask">
+                <div id="moreDetails__content" class="moreDetails__content">
+                    <div id="moreDetails__content--top" class="moreDetails__content--top">
+                        <div id="moreDetails__top--leftContent" class="moreDetails__top--leftContent">
+                            <div id="moreDetails__leftContent--title" class="moreDetails__leftContent--title">
+                                <div id="moreDetails__title--icon" class="moreDetails__title--icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"/>
+                                    </svg>
+                                </div>
+                                <div id="moreDetails__title--content" class="moreDetails__title--content">
+                                    <span id="moreDetails__titleContent--title" class="moreDetails__titleContent--title">{{ taskDetails.titleTask }}</span>
+                                    <span id="moreDetails__titleContent--category" class="moreDetails__titleContent--category">{{ taskDetails.categoryTask }}</span>
+                                    <span id="moreDetails__titleContent--course" class="moreDetails__titleContent--course">{{ taskDetails.courseTask }}</span>
+                                </div>
+                            </div>
+                            <div id="moreDetails__leftContent--date" class="moreDetails__leftContent--date">
+                                <div id="moreDetails__date--icon" class="moreDetails__date--icon">
+                                    <svg viewBox="0 0 448 512">
+                                        <path d="M96 32C96 14.33 110.3 0 128 0C145.7 0 160 14.33 160 32V64H288V32C288 14.33 302.3 0 320 0C337.7 0 352 14.33 352 32V64H400C426.5 64 448 85.49 448 112V160H0V112C0 85.49 21.49 64 48 64H96V32zM448 464C448 490.5 426.5 512 400 512H48C21.49 512 0 490.5 0 464V192H448V464z"/>
+                                    </svg>
+                                </div>
+                                <div id="moreDetails__date--content" class="moreDetails__date--content">
+                                    <span id="moreDetails__dateContent--date" class="moreDetails__titleContent--title">{{ taskDetails.dateTask }}</span>
+                                    <span id="moreDetails__dateContent--hour" class="moreDetails__titleContent--course">{{ taskDetails.hourTask }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="moreDetails__top--rightContent" class="moreDetails__top--rightContent">
+                            <svg id="moreDetails__topRightContent--svg" viewBox="0 0 128 512">
+                                <path d="M64 360C94.93 360 120 385.1 120 416C120 446.9 94.93 472 64 472C33.07 472 8 446.9 8 416C8 385.1 33.07 360 64 360zM64 200C94.93 200 120 225.1 120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200zM64 152C33.07 152 8 126.9 8 96C8 65.07 33.07 40 64 40C94.93 40 120 65.07 120 96C120 126.9 94.93 152 64 152z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="moreDetails__content--bottom" class="moreDetails__content--bottom">
+                        <span id="moreDetails__bottom--noteContent" class="moreDetails__bottom--noteContent">
+                            <span id="moreDetails__bottomNote--Content" class="moreDetails__bottomNote--Content">{{ taskDetails.noteTask }}</span>
+                        </span>
+                        <span id="moreDetails__bottom--completedButton" class="moreDetails__bottom--completedButton {{ taskDetails.completedClassTask }}">
+                            <form name="completedTask" id="completedTaskForm" method="POST" action="/schedule/completedTask/{{ taskDetails.idTask }}">
+                                <span id="moreDetails__completedButton--Completed" class="moreDetails__completedButton--Completed">{{ taskDetails.completedDetailsTask }}</span>
+                                <input type="hidden" name="completedClass" id="completedClass__hidden"/>
+                                <input type="hidden" name="completed" id="completed__hidden"/>
+                                <input type="hidden" name="completedDetails" id="completedDetails__hidden"/>
+                            </form>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {{!-- <div class="newtask newtask--hide" id="newtask">
+                <div class="newtask__box">
+                    <span class="newtask__box--title">Crear</span>
+                    <div class="newtask__box--form">
+                        <form action="/schedule" method="POST" name="formTask" id="formTask">
+
+                            <div class="newtask__form" id="newtask__formLeft">
+                                <div class="required">
+                                    <label class="label">Título</label>
+                                    <input id="titleTask" spellcheck="false" required type="text" name="title" placeholder="Ejem. Conversatorio." minlength="4" maxlength="20">
+                                </div>
+    
+                                <div class="required" id="ecSettings">
+                                    <label class="label" id="ecSettingsTitle">Categoría</label>
+                                    <div id="ecModeSelector">
+    
+                                        <div id="ecModeList">
+                                            <div class="selectBox">
+                                                <div class="optionsContainer">
+    
+                                                    <div class="option">
+                                                        <input type="radio" class="radio" id="Tarea">
+                                                        <label for="Tarea">Tarea</label>
+                                                    </div>
+    
+                                                    <div class="option">
+                                                        <input type="radio" class="radio" id="Exámen">
+                                                        <label for="Exámen">Examen</label>
+                                                    </div>
+    
+                                                    <div class="option">
+                                                        <input type="radio" class="radio" id="Reunión">
+                                                        <label for="Reunión">Reunión</label>
+                                                    </div>
+    
+                                                    <div class="option">
+                                                        <input type="radio" class="radio" id="Presentación">
+                                                        <label for="Presentación">Presentación</label>
+                                                    </div>
+    
+                                                    <div class="option">
+                                                        <input type="radio" class="radio" id="Recordatorio">
+                                                        <label for="Recordatorio">Recordatorio</label>
+                                                    </div>
+    
+                                                </div>
+                                                <div class="selectedOption" id="categoryTask">Seleccionar</div>
+                                                <input type="hidden" name="category" id="categoryTask__hidden"/>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+    
+                                <div class="required">
+                                    <label class="label">Fecha</label>
+                                    <input id="dateTask" required type="datetime-local">
+                                    <input type="hidden" name="date" id="dateTask__hidden"/>
+                                    <input type="hidden" name="hour" id="hourTask__hidden"/>
+                                </div>
+                            </div>
+
+                            <div class="newtask__form" id="newtask__formFront">
+                                <div class="required">
+                                    <label class="label">Asignatura</label>
+                                    <input id="courseTask" spellcheck="false" required type="text" name="course" placeholder="Ejem. Inglés." minlength="4" maxlength="20">
+                                </div>
+                            
+                                <div class="required">
+                                    <label class="label">Nota</label>
+                                    <textarea id="noteTask" spellcheck="false" required name="note" placeholder="Ejem. Llevar diccionario." minlength="5" maxlength="100"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="newtask__form--btns">
+                                <div class="newtask__form--denyBtn" id="newtask__form--denyBtn">Cancelar</div>
+                                <div class="newtask__form--acceptBtn" id="newtask__form--acceptBtn">Siguiente</div>
+                            </div>
+
+                            <input type="hidden" name="completedClass" id="completedClass__hidden" value="uncompleted"/>
+                            <input type="hidden" name="completed" id="completed__hidden" value="Sin completar"/>
+                            <input type="hidden" name="completedDetails" id="completedDetails__hidden" value="Completar"/>
+                            <input type="hidden" name="idTask" id="idTask__hidden"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="taskList" class="taskList true"></div>
+
+            <div id="noTask" class="no_task">
+                <div class="no_taskYet">
+                    <div class="no_taskYet--text">¡No tienes ninguna tarea agendada todavía!</div>
+                </div>
+                <div class="add_taskMsg">
+                    <div class="add_taskMsg--text">Presiona el botón + para agregar una tarea.</div>
+                </div>
+            </div> --}}
+        </div>
+
+    </main>

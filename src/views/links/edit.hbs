@@ -1,0 +1,99 @@
+
+{{> header}}
+
+{{> menu}}
+
+    <main id="main">
+
+        <div id="main_cover"></div>
+
+        <div class="schedule">
+            <div class="newtask newtask--hide" id="newtask" editMode="{{ editMode }}">
+                <div class="newtask__box">
+                    <span class="newtask__box--title">Editar</span>
+                    <div class="newtask__box--form">
+                        <form action="/schedule/edit/{{ task.idTask }}" method="POST" name="formTask" id="formTask">
+
+                            <div class="newtask__form" id="newtask__formLeft">
+                                <div class="required">
+                                    <label class="label">Título</label>
+                                    <input id="titleTask" value="{{ task.title }}" spellcheck="false" required type="text" name="title" placeholder="Ejem. Conversatorio." minlength="4" maxlength="20">
+                                </div>
+    
+                                <div class="required" id="ecSettings">
+                                    <label class="label" id="ecSettingsTitle">Categoría</label>
+                                    <div id="ecModeSelector">
+    
+                                        <div id="ecModeList">
+                                            <div class="selectBox">
+                                                <div class="optionsContainer">
+    
+                                                    <div class="option">
+                                                        <input type="radio" class="radio" id="Tarea">
+                                                        <label for="Tarea">Tarea</label>
+                                                    </div>
+    
+                                                    <div class="option">
+                                                        <input type="radio" class="radio" id="Exámen">
+                                                        <label for="Exámen">Examen</label>
+                                                    </div>
+    
+                                                    <div class="option">
+                                                        <input type="radio" class="radio" id="Reunión">
+                                                        <label for="Reunión">Reunión</label>
+                                                    </div>
+    
+                                                    <div class="option">
+                                                        <input type="radio" class="radio" id="Presentación">
+                                                        <label for="Presentación">Presentación</label>
+                                                    </div>
+    
+                                                    <div class="option">
+                                                        <input type="radio" class="radio" id="Recordatorio">
+                                                        <label for="Recordatorio">Recordatorio</label>
+                                                    </div>
+    
+                                                </div>
+                                                <div class="selectedOption" id="categoryTask">{{ task.category }}</div>
+                                                <input type="hidden" name="category" id="categoryTask__hidden" value="{{ task.category }}"/>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+    
+                                <div class="required">
+                                    <label class="label">Fecha</label>
+                                    <input id="dateTask" required type="datetime-local" value="{{ task.date }}">
+                                    <input type="hidden" name="date" id="dateTask__hidden"/>
+                                    <input type="hidden" name="hour" id="hourTask__hidden"/>
+                                </div>
+                            </div>
+
+                            <div class="newtask__form" id="newtask__formFront">
+                                <div class="required">
+                                    <label class="label">Asignatura</label>
+                                    <input id="courseTask" spellcheck="false" required type="text" name="course" placeholder="Ejem. Inglés." minlength="4" maxlength="20" value="{{ task.course }}">
+                                </div>
+                            
+                                <div class="required">
+                                    <label class="label">Nota</label>
+                                    <textarea id="noteTask" spellcheck="false" required name="note" placeholder="Ejem. Llevar diccionario." minlength="5" maxlength="100">{{ task.note }}</textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="newtask__form--btns">
+                                <div class="newtask__form--denyBtn" id="newtask__form--denyBtn">Cancelar</div>
+                                <div class="newtask__form--acceptBtn" id="newtask__form--acceptBtn">Siguiente</div>
+                            </div>
+
+                            <input type="hidden" name="completedClass" id="completedClass__hidden" value="{{ task.completedClass }}"/>
+                            <input type="hidden" name="completed" id="completed__hidden" value="{{ task.completed }}"/>
+                            <input type="hidden" name="completedDetails" id="completedDetails__hidden" value="{{ task.completedDetails }}"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>

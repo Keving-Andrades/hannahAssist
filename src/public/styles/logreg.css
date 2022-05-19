@@ -1,0 +1,869 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(../assets/fonts/roboto/Roboto-Thin.ttf) format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../assets/fonts/roboto/Roboto-Light.ttf) format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../assets/fonts/roboto/Roboto-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../assets/fonts/roboto/Roboto-Medium.ttf) format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../assets/fonts/roboto/Roboto-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../assets/fonts/roboto/Roboto-Black.ttf) format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+:root {
+    /* === BODY === */
+    --body-background-color: #f1f1f1;
+    --body-color: #1f2630;
+    --wave: #08f;
+
+    /* === LINK === */
+    --link-color: #1f2630;
+
+    /* === LOGO === */
+    --icon-bg: #0088ff;
+    --border-book: none;
+    --h: none;
+
+    /* === LOGIN === */
+    --valid-button-left: #3255f1;
+    --valid-button-right: #50b9ff;
+    --login-input-background-color: #d7d7d7c2;
+    --login-input-color: #1f26308a;
+    --login-input-placeholder-color: #8080804b;
+    --login-input-focusVisible-color: #1f2630bd;
+    --loginwo: #6a6a6aba;
+
+    /* === ALERT BOX === */
+    --alert-color: #1a6a16;
+    --alertSuccess-background-color: #4cb548;
+
+    --alertError-background-color: #b54848;
+    --alertError-color: #6a1616;
+}
+
+:root.dark {
+    /* === BODY === */
+    --body-background-color: #161b22;
+    --body-color: #e1e1e1;
+    --wave: #2b3a50;
+
+    /* === HEADER === */
+    --header-background-color: #252d38;
+
+    /* === LINK === */
+    --link-color: #E1E1E1;
+
+    /* === MENU_SIDE === */
+    --menu_side-background-color: #2b3a50;
+    --menu_side-color: #e1e1e1;
+
+    /* === SPLASH === */
+    --splash-background-color: #2b3a50;
+
+    /* === LOGO === */
+    --icon-bg: #fff;
+    --border-book: none;
+    --h: none;
+
+    /* === LOGIN === */
+    --invalid-button-left: #21252c;
+    --invalid-button-right: #2b3a50;
+    --valid-button-left: #1e2742;
+    --valid-button-right: #0068ff;
+    --login-input-background-color: #12161c;
+    --login-input-color: #838383;
+    --login-input-placeholder-color: #8080804b;
+    --login-input-focusVisible-color: #bfbfbf;
+    --loginwo: #b1b1b15d;
+
+    /* === ALERT BOX === */
+    --alert-color: #1a6a16;
+    --alertSuccess-background-color: #4cb548;
+
+    --alertError-background-color: #b54848;
+    --alertError-color: #6a1616;
+}
+
+*:link, *:visited {
+    color: var(--link-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    user-select: none;
+}
+
+body {
+    background-color: var(--body-background-color);
+    color: var(--body-color);
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+main {
+    height: 100%;
+}
+
+/* Header Wave */
+.header {
+    position: absolute;
+    top: -35px;
+    left: 0;
+    right: 0;
+}
+
+.header .header__wave {
+    height: 200px;
+}
+
+.header .header__wave svg {
+    height: 100%;
+    width: 100%;
+}
+
+.wave {
+    stroke: none;
+    fill: var(--wave);
+}
+
+/* Logo Index */
+.logo__index {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.6em;
+    margin-top: 6em;
+}
+
+.logo__index svg {
+    width: 5em;
+}
+
+.logo__index svg .icon_bg {
+    fill: var(--icon-bg);
+}
+
+.logo__index svg .border_book {
+    fill: var(--border-book);
+}
+
+.logo__index svg .H {
+    fill: var(--h);
+}
+
+/* LOGIN SCREEN */
+.login {
+    display: flex;
+    justify-content: center;
+    height: 431px;
+    letter-spacing: 1px;
+}
+
+.loginchild {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+    height: 100%;
+}
+
+.loginchild h2 {
+    font-size: 4em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.loginchild h3 {
+    color: #0879bb;
+    font-size: 1.4em;
+    font-weight: 400;
+}
+
+.loginchild__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 1em;
+    width: 500px;
+    height: 100%;
+    border-radius: 25px;
+    background-color: white;
+    padding: 2em 1em;
+}
+
+.loginchild__form > .inputSignIn__Wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+}
+
+.loginchild input, .button {
+    border: 2px solid #0000;
+    border-radius: 10px;
+    background-color: var(--login-input-background-color);
+    color: var(--login-input-color);
+    margin-bottom: 18.2px;
+    width: 100%;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 15px 25px;
+    transition: all .2s;
+}
+
+.loginchild input:not(:placeholder-shown):focus-visible:valid {
+    border-color: #00ff40;
+}
+
+.loginchild input:not(:placeholder-shown):focus-visible:invalid {
+    border-color: #ff3f3f;
+}
+
+.loginchild .button {
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 15px;
+    color: #f1f1f1;
+    width: 10em;
+    background-color: #0879bb;
+    margin: 0;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.loginchild .button.next {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.loginchild input::placeholder {
+    color: var(--login-input-placeholder-color);
+}
+
+.loginchild input:focus-visible {
+    outline: none;
+    border-color: #0088ff;
+    color: var(--login-input-focusVisible-color);
+    transition: all 0.3s;
+}
+
+.loginchild .signin__btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 11%;
+    width: 100%;
+}
+
+.loginchild .authBtns {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto;
+}
+
+.loginchild .authBtns.center {
+    margin: auto;
+    margin-top: 1em;
+
+}.loginchild .authBtns.center.mb {
+    margin-bottom: 1em;
+}
+
+.loginchild .authBtns a {
+    padding: 0.2em 0 .2em .5em;
+    font-size: .9em;
+    color: #0079be;
+    font-weight: 500;
+}
+
+.loginchild .authBtns a:not(:last-child) {
+    margin-bottom: .2em;
+}
+
+/* LOGIN SCREEN END */
+
+/* REGISTER SITE */
+
+.register {
+    display: flex;
+    justify-content: center;
+    letter-spacing: 1px;
+    margin-top: 7em;
+    height: 80%;
+}
+
+.register h2 {
+    font-size: 2em;
+    bottom: 0.8em;
+}
+
+.register h3 {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.loginchild .CI__input {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 18.2px;
+    width: 100%;
+} 
+
+.loginchild .CI__input input {
+    margin: 0;
+    padding-left: 45px;
+}
+
+.loginchild .CI__input input:placeholder-shown ~ span {
+    color: var(--login-input-placeholder-color);
+}
+
+.loginchild .CI__input input:focus-visible ~ span {
+    color: var(--login-input-focusVisible-color);
+}
+
+.loginchild .CI__input span {
+    color: var(--login-input-color);
+    font-size: 16px;
+    position: absolute;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: all .2s;
+    padding-left: 25px;
+}
+
+.loginchild__form > .formViews {
+    display: flex;
+    position: relative;
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.loginchild__form > .formViews > div {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    z-index: 1;
+    transition: 0.4s;
+}
+
+.loginchild__form > .formViews > div:not(.form1) {
+    transform: scale(0.8);
+}
+
+.loginchild__form > .formViews > div > .labelForm {
+    display: flex;
+    font-size: 1.8em;
+    font-weight: 900;
+    justify-content: center;
+    text-align: center;
+}
+
+.loginchild__form > .formViews > div > .inputWrapper {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loginchild__form > .formViews > div > .inputWrapper :last-child {
+    margin-bottom: 0;
+}
+
+.loginchild__form > .formViews > div > .inputWrapper .invalid {
+    border-color: #ff3f3f;
+}
+
+.loginchild__form > .formViews > div.hidden {
+    opacity: 0;
+    z-index: 0;
+    transition: z-index 0s 0s, opacity 0.3s 0s, transform 0.35s;
+}
+
+.loginchild__form > .formViews > div.left {
+    transform: translateX(-101%);
+    transition: transform 0.35s cubic-bezier(1, 0, 1, 0.15), z-index 0s 0s, opacity 0.35s 0s;
+}
+
+.loginchild__form > .formViews > div.show {
+    transform: scale(1);
+}
+
+.loginchild__form > .formViews > div.show.left {
+    transform: scale(1) translateX(-101%);
+    transition: transform 0.35s cubic-bezier(1, 0, 1, 0.15), z-index 0s 0s, opacity 0.35s 0s;
+}
+
+.loginchild__form > .form__navbar {
+    display: flex;
+    position: absolute;
+    top: 4%;
+    height: 3px;
+    width: max-content;
+}
+
+.loginchild__form > .form__navbar > .navbar {
+    width: 20px;
+    height: 100%;
+    background-color: #00000014;
+}
+
+.loginchild__form > .form__navbar > .navbar.filled {
+    cursor: pointer;
+    background-color: #daeeff;
+}
+
+.loginchild__form > .form__navbar > .navbar.filled:hover {
+    background-color: #0088ff66;
+}
+
+.loginchild__form > .form__navbar > .navbar:not(:last-child) {
+    margin-right: 2px;
+}
+
+.loginchild__form > .form__navbar > .navbar.active {
+    background-color: #0088ffbf;
+}
+
+.loginchild__form > .form__navbar > .navbar.next {
+    cursor: pointer;
+}
+
+.loginchild__form > .form__navbar > .navbar.next:hover {
+    background-color: #0088ff57;
+}
+
+/* REGISTER SITE END */
+
+
+/* === AlertBox === */
+
+.alertBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 8vh;
+    right: 4vw;
+    height: 60px;
+    width: max-content;
+    border-radius: 0.5em;
+    overflow: hidden;
+    z-index: 96;
+    background-color: var(--alertSuccess-background-color);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.alertBox.error {
+    background-color: var(--alertError-background-color);
+}
+
+.alertBox.show {
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+.alertBox > .alertBox__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.alertBox > .alertBox__container > .alertBox__container--close {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 15px;
+    width: 15px;
+    fill: var(--alert-color);
+}
+
+.alertBox.error > .alertBox__container > .alertBox__container--close {
+    fill: var(--alertError-color);
+}
+
+.alertBox > .alertBox__container > .alertBox__container--message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 0.7em;
+}
+
+.alertBox > .alertBox__container > .alertBox__container--message > svg {
+    height: 20px;
+    margin-right: 0.5em;
+    fill: var(--alert-color);
+}
+
+.alertBox.error > .alertBox__container > .alertBox__container--message > svg {
+    height: 20px;
+    margin-right: 0.5em;
+    fill: var(--alertError-color);
+}
+
+.alertBox > .alertBox__container > .alertBox__container--message {
+    color: var(--alert-color);
+    font-weight: 500;
+}
+
+.alertBox.error > .alertBox__container > .alertBox__container--message {
+    color: var(--alertError-color);
+}
+
+.alertBox > .alertBox__container > .alertBox__container--timeoutBar {
+    position: absolute;
+    bottom: 0;
+    height: 5px;
+    width: 100%;
+    background-color: #00000052;
+    transform: translateX(0);
+    transition: transform 0s 0.3s;
+}
+
+.alertBox.show > .alertBox__container > .alertBox__container--timeoutBar {
+    transform: translateX(-100%);
+    transition: transform 7s cubic-bezier(0, 0, 0, 0);
+}
+
+@media only screen and (max-width: 912px) {
+    /* Header Wave */
+    .header {
+        position: unset;
+    }
+
+    .logo__index {
+        margin-top: 5em;
+    }
+
+    .header .header__wave {
+        height: 200px;
+    }
+
+    .logo__index svg {
+        width: 6em;
+    }
+
+    .login {
+        margin-top: 1em;
+    }
+
+    .loginchild h2 {
+        color: var(--body-color);
+        font-size: 4em;
+        font-weight: 800;
+    }
+
+    .loginchild h3 {
+        font-size: 1.8em;
+    }
+
+    .loginchild__form {
+        width: 75%;
+        margin: 3em 0;
+    }
+
+    .loginchild input, .button {
+        margin-bottom: 28.8px;
+        width: 100%;
+        height: 80px;
+        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: 1.5em;
+        padding: 1.2em 2em;
+        transition: all .2s;
+    }
+
+    .loginchild .CI__input {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-bottom: 28.8px;
+    } 
+    
+    .loginchild .CI__input input {
+        margin: 0;
+        padding-left: 3.5em;
+    }
+    
+    .loginchild .CI__input span {
+        font-size: 1.5em;
+        position: absolute;
+        padding-left: 2em;
+    }
+
+    .loginchild .authBtns a {
+        padding: 0.2em 0 0.2em 0.5em;
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+
+    .loginchild .button {
+        align-items: center;
+        width: 10em;
+        font-weight: 600;
+        margin: 0;
+        margin-top: 2em;
+    }
+
+    #register .loginchild .button {
+        margin-top: 1em;
+    }
+
+    #offlineLogin {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    /* Header Wave */
+    .header {
+        position: unset;
+    }
+
+    .header .header__wave {
+        height: 160px;
+    }
+
+    .header .header__wave svg {
+        height: 100%;
+        width: 100%;
+    }
+
+    .wave {
+        stroke: none;
+        fill: var(--wave);
+    }
+
+    /* Logo Index */
+    .logo__index {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2em;
+        margin-top: 0;
+    }
+
+    .logo__index svg {
+        width: 4em;
+    }
+
+    .logo__index svg .icon_bg {
+        fill: var(--icon-bg);
+    }
+
+    .logo__index svg .border_book {
+        fill: var(--border-book);
+    }
+
+    .logo__index svg .H {
+        fill: var(--h);
+    }
+
+    /* LOGIN SCREEN */
+    .login {
+        letter-spacing: 1px;
+    }
+
+    .loginchild {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .loginchild h2 {
+        font-size: 3em;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .loginchild h3 {
+        color: #0879bb;
+        font-size: 1em;
+        font-weight: 400;
+    }
+
+    .loginchild__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2em 0;
+        width: 75%;
+    }
+
+    .loginchild input, .button {
+        border: 2px solid #0000;
+        border-radius: 1em;
+        height: 50px;
+        background-color: var(--login-input-background-color);
+        color: var(--login-input-color);
+        margin-bottom: 18.2px;
+        width: 100%;
+        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 15px 25px;
+        transition: all .2s;
+    }
+
+    .loginchild .CI__input {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-bottom: 18.2px;
+        width: 100%;
+    }
+
+    .loginchild .CI__input input {
+        margin: 0;
+        padding-left: 45px;
+    }
+
+    .loginchild .CI__input input:placeholder-shown~span {
+        color: var(--login-input-placeholder-color);
+    }
+
+    .loginchild .CI__input input:focus-visible~span {
+        color: var(--login-input-focusVisible-color);
+    }
+
+    .loginchild .CI__input span {
+        color: var(--login-input-color);
+        font-size: 14px;
+        position: absolute;
+        letter-spacing: 2px;
+        font-weight: 600;
+        transition: all .2s;
+        padding-left: 25px;
+    }
+
+    .loginchild input::placeholder {
+        color: var(--login-input-placeholder-color);
+    }
+
+    .loginchild input:focus-visible {
+        outline: none;
+        border-color: #0088ff;
+        color: var(--login-input-focusVisible-color);
+        transition: all 0.3s;
+    }
+
+    .loginchild input:not(:placeholder-shown):focus-visible:invalid {
+        border-color: #ff3f3f;
+    }
+
+    .loginchild input:not(:placeholder-shown):focus-visible:valid {
+        border-color: #00ff40;
+    }
+
+    .loginchild .button {
+        display: flex;
+        justify-content: center;
+        border: none;
+        color: #ffffff;
+        width: 10em;
+        font-weight: 600;
+        background-image: linear-gradient(to right, var(--valid-button-left), var(--valid-button-right));
+        background-color: unset;
+        margin: 0;
+        margin-top: 1em;
+    }
+
+    :root.dark .loginchild form:invalid .button {
+        background-image: linear-gradient(to right, var(--invalid-button-left), var(--invalid-button-right));
+        color: #ffffff70;
+    }
+
+    :root.dark .loginchild form:valid .button {
+        background-image: linear-gradient(to right, var(--valid-button-left), var(--valid-button-right));
+        color: #E1E1E1;
+    }
+
+    .loginchild .authBtns {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-left: auto;
+    }
+
+    .loginchild .authBtns a {
+        padding: 0.2em 0 .2em .5em;
+        font-size: .7em;
+        color: #0079be;
+        font-weight: 500;
+    }
+
+    .loginchild .authBtns a:not(:last-child) {
+        margin-bottom: .2em;
+    }
+
+    #offlineLogin {
+        display: block;
+        text-align: center;
+        font-size: 1em;
+        color: var(--loginwo);
+        text-decoration: none;
+    }
+
+    /* LOGIN SCREEN >>END<< */
+
+    /* REGISTER SITE */
+
+    #registerh2 {
+        display: block;
+        text-align: center;
+        font-size: 3em;
+        bottom: 0.8em;
+    }
+
+    #registerh3 {
+        text-align: center;
+        font-size: 1em;
+    }
+
+    /* REGISTER SITE >>END<< */
+
+}

@@ -1,0 +1,170 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(../assets/fonts/roboto/Roboto-Thin.ttf) format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../assets/fonts/roboto/Roboto-Light.ttf) format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../assets/fonts/roboto/Roboto-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../assets/fonts/roboto/Roboto-Medium.ttf) format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../assets/fonts/roboto/Roboto-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../assets/fonts/roboto/Roboto-Black.ttf) format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+:root {
+    --link-color: #E1E1E1;
+    --body-background-color: #f1f1f1;
+    --body-color: #1a1d20;
+    --header-background-color: #2B3A50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    user-select: none;
+}
+
+*:link, *:visited, *:active {
+    color: var(--link-color);
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    background-color: var(--body-background-color);
+    color: var(--body-color);
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    padding: 0 2em;
+    height: 60px;
+    width: 100vw;
+    background-color: var(--header-background-color);
+}
+
+header > div > svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--link-color);
+}
+
+header > nav > a:first-child {
+    margin-right: 1em;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+main > .logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main > .logoContainer > .logo {
+    width: 200px;
+    height: 200px;
+    fill: #35ABDD;
+}
+
+main > .logoContainer > .logoTagline {
+    width: 400px;
+    fill: #2B3A50;
+}
+
+main > .appPreviews {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+}
+
+main > .appPreviews > .appPreviews__desktop {
+    height: 380px;
+    margin-left: 50px;
+    animation: floating 3s ease-in-out infinite alternate;
+    transition: height 0.6s, margin-left 0.6s;
+}
+
+main > .appPreviews > .appPreviews__desktop:hover {
+    height: 450px;
+    margin-left: 30px;
+}
+
+main > .appPreviews > .appPreviews__android {
+    height: 380px;
+    margin-right: 150px;
+    animation: floating 3s ease-in-out infinite alternate-reverse;
+    transition: height 0.6s, margin-right 0.6s;
+}
+
+main > .appPreviews > .appPreviews__android:hover {
+    height: 450px;
+    margin-right: 130px;
+}
+
+@keyframes floating {
+    from {
+        transform: translateY(-1em);
+    }
+
+    to {
+        transform: translateY(1em);
+    }
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    padding: 0 2em;
+    height: 60px;
+    width: 100vw;
+    background-color: var(--header-background-color);
+    color: var(--link-color);
+}
