@@ -114,6 +114,7 @@
 
     /* === HEADER === */
     --header-background-color: #252d38;
+    --header-color: #d8d8d8;
 
     /* === LINK === */
     --link-color: #E1E1E1;
@@ -198,12 +199,18 @@ body {
 }
 
 main {
-    overflow: scroll;
     height: inherit;
     padding: 5.5em 1.5em 1.5em 1.5em;
     opacity: 0;
     transform: translateY(-2em);
     animation: main-slide 0.5s .2s cubic-bezier(0.21, 0.01, 0, 1.04) forwards;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+main::-webkit-scrollbar {
+    display: none;
 }
 
 @keyframes main-slide {
@@ -613,6 +620,12 @@ a.config > div {
     height: 100%;
     width: 100%;
     overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.schedule > .taskList::-webkit-scrollbar {
+    display: none;
 }
 
 .schedule> .taskList > .taskTitles {
